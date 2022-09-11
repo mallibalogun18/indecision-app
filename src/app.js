@@ -1,70 +1,69 @@
-console.log('App.js is running!');
+// console.log('App.js is running!');
 
-//JSX - JavaScript XML = What is JSX? JSX stands for JavaScript XML. JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React.
-let template = (
-    <div>
-        <h1>Indecision App</h1>
-        <p>This is some Info:</p>
-        <ol>
-            <li>First Iten</li>
-            <li>Second Item</li>
-        </ol>
-    </div>
-);
+// //JSX - JavaScript XML = What is JSX? JSX stands for JavaScript XML. JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React.
+// let template = (
+//     <div>
+//         <h1>Indecision App</h1>
+//         <p>This is some Info:</p>
+//         <ol>
+//             <li>First Iten</li>
+//             <li>Second Item</li>
+//         </ol>
+//     </div>
+// );
 
-//create new templateTwo let JSX expression
-/*
-div
-    h1 -> Olaleke Akbar
-    p -> Age: 33
-    p -> Location: Baltimore
-    Render templateTwo instead of template */
+// //create new templateTwo let JSX expression
+// /*
+// div
+//     h1 -> Olaleke Akbar
+//     p -> Age: 33
+//     p -> Location: Baltimore
+//     Render templateTwo instead of template */
 
-let user = {
-    name: 'Mohammed',
-    age: 22,
-    location: 'New York'
-};
+// let user = {
+//     name: 'Mohammed',
+//     age: 22,
+//     location: 'New York'
+// };
 
-function getLocation(location) {
-    if (location) {
-        return <p>Location: {location.toUpperCase()}</p>;
-    }
-}
+// function getLocation(location) {
+//     if (location) {
+//         return <p>Location: {location.toUpperCase()}</p>;
+//     }
+// }
 
-let templateTwo = (
-    <div>
-        <h1>Name: {user.name ? user.name : 'Anonymous'}</h1>
-        {user.age && user.age >= 18 && <p>Age: {user.age}</p>}
-        {getLocation(user.location)}
-    </div>
-);
+// let templateTwo = (
+//     <div>
+//         <h1>Name: {user.name ? user.name : 'Anonymous'}</h1>
+//         {user.age && user.age >= 18 && <p>Age: {user.age}</p>}
+//         {getLocation(user.location)}
+//     </div>
+// );
 
-/* create app object title/subtitle 
-    use title/subtitle is the template
-    tender template
-*/
+// /* create app object title/subtitle 
+//     use title/subtitle is the template
+//     tender template
+// */
 
-let book = {
-    title: 'Bolivia',
-    subtitle: 'Days of reconcilitation in El Alto'
-}
+// let book = {
+//     title: 'Bolivia',
+//     subtitle: 'Days of reconcilitation in El Alto'
+// }
 
-let templateThree = (
-    <div>
-        <h1>{book.title}</h1>
-        <p>{book.subtitle}</p>
-        <ol>
-            <li>Item One</li>
-            <li>Item Two</li>
-        </ol>
-    </div>
-)
+// let templateThree = (
+//     <div>
+//         <h1>{book.title}</h1>
+//         <p>{book.subtitle}</p>
+//         <ol>
+//             <li>Item One</li>
+//             <li>Item Two</li>
+//         </ol>
+//     </div>
+// )
 
-//if statements, ternary operators, logical operator
-//only redered the subtitle (and p tag) if subtitle exist - logical operator
-//reender new p tag - if option.length > 0 ''Here are your options" : "No Options"
-
+// //if statements, ternary operators, logical operator
+// //only redered the subtitle (and p tag) if subtitle exist - logical operator
+// //reender new p tag - if option.length > 0 ''Here are your options" : "No Options"
 
 let app = {
     title: 'Confession',
@@ -90,6 +89,29 @@ let templateFour = (
     </div>
 );
 
+let count = 0
+const addOne = () => {
+    console.log('addOne')
+};
+const minusOne = () => {
+    console.log('minusOne')
+}
+const reset = () => {
+    console.log('reset')
+}
 
+const templateEvent = (
+    <div>
+        <h1>Counter: {count}</h1>
+        <button onClick={addOne}>+1</button>
+        <button onClick={minusOne}>-1</button>
+        <button onClick={reset}>reset</button>
+    </div>
+);
+//Challenge
+//make button "-1" - setup minusOne function and register - log "minueOne"
+// Make reset button "reset" - setup reset function - log "reset"
+
+console.log(templateEvent)
 let appRoot = document.getElementById('app');
-ReactDOM.render(templateFour, appRoot);
+ReactDOM.render(templateEvent, appRoot);
